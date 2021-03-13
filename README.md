@@ -12,3 +12,7 @@ pip3 install opencv-python
 sudo apt-get install -y libatlas-base-dev libhdf5-dev libhdf5-serial-dev libatlas-base-dev libjasper-dev  libqtgui4  libqt4-test
 
 preference -> Raspberry PI configuration -> interfaces -> enable camera
+(need to reboot)
+
+wget https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_frontalface_default.xml
+(pretrained face for opencv)
