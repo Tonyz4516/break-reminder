@@ -10,6 +10,7 @@ This project aims to solve this issue by running the tracking service on Raspber
 
 - by default, this program use gpio pin 17 to control the indicator led
 - please connect your led, along with 100Ω resistor to pin 17 and ground
+- to check which pin is 17 and ground, [please refer to this file](https://gpiozero.readthedocs.io/en/stable/recipes.html#pin-numbering)
 - connect the camera module to Raspberry Pi
 - position the camera so it can detect front of your face
 
