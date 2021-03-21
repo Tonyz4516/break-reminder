@@ -29,6 +29,10 @@ This project aims to solve this issue by running the tracking service on Raspber
 - open terminal
 - run command *python3 main.py*
 
+## Assembled detector
+
+![](https://github.com/Tonyz4516/break-reminder/blob/main/assembled.jpg)
+
 ## hardware shopping list for this project
 - [Raspberry pi](https://www.pishop.us/product/raspberry-pi-4-model-b-2gb/)
 - [camera module](https://www.pishop.us/product/raspberry-pi-camera-module-v2/)
