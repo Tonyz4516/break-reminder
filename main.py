@@ -1,35 +1,44 @@
 import gpiozero
 import time
 import detector
+
+# initialize LED on gpio pin 17
 led = gpiozero.LED(17)
 
-sit, leave = 0, 0
-sitThreshold = 4
-leaveThreshold = 2
-restTime = 20 # 5 minutes
+# saved detector results in the past hour; 1 hour = 600 segments of 6 seconds
+timeline = [0 for _ in range(600)]
 
-# if sit detected: sit counter ++
-# if sit > 50 min: led on
-# if led on and leave > sensitivity threshold:
-#     5 mins count down, then clear sit counter and leave counter
+# for debugging
+statusLight = gpiozero.LED(4)
+statusLightSwitch = 1
 
 while True:
-    time.sleep(3)
-    s = detector.detect_face()
-    if s:
-        sit += 1
+    # indicate if the program is still running
+    statusLightSwitch *= -1
+    if statusLightSwitch > 0:
+        statusLight.on()
+    else:
+        statusLight.off()
     
-    if sit > sitThreshold:
+    # default for the program is to detect every 6 seconds
+    time.sleep(6) # call detector every 6 seconds
+    s = detector.detect_face() # detection results: true for face detected
+    timeline.pop(0)
+    if s:
+        timeline.append(1)
+    else:
+        timeline.append(0)
+    
+    # more calculation, but simplifies the design logic
+    sit = sum(timeline)
+    if sit >= 500:
         led.on()
-        if not s:
-            leave += 1
     else:
         led.off()
     
-    if leave > leaveThreshold:
-        print("rest period triggered")
-        time.sleep(restTime)
-        sit = 0
-        leave = 0
-        
-    print("sit:", sit, "leave:", leave)
+    # if leave for 5 minutes, reset timeline
+    if sum(timeline[-50:]) == 0: # -50
+        timeline = [0 for _ in range(600)]
+    
+    print("detector results: ", s)
+    print("sit for ", sit/10, " minutes")
