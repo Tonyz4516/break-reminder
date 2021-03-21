@@ -14,7 +14,7 @@ This project aims to solve this issue by running the tracking service on Raspber
 - connect the camera module to Raspberry Pi
 - position the camera so it can detect front of your face
 
-## steps for setup Python3 on Raspberry Pi
+## steps for setup dependent libraries on Raspberry Pi
 
 - Raspberry PI 4 came with python3 pre-installed
 - Open terminal and run *pip3 install opencv-python*
