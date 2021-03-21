@@ -6,13 +6,28 @@ Working as a software engineer, the norm is sitting at a desk all day and coding
 
 This project aims to solve this issue by running the tracking service on Raspberry Pi, which requires no manual input once the initial setup is completed.
 
+## steps for setup hardware
 
-pip3 install opencv-python
+- by default, this program use gpio pin 17 to control the indicator led
+- please connect your led, along with 100Ω resistor to pin 17 and ground
+- connect the camera module to Raspberry Pi
+- position the camera so it can detect front of your face
 
-sudo apt-get install -y libatlas-base-dev libhdf5-dev libhdf5-serial-dev libatlas-base-dev libjasper-dev  libqtgui4  libqt4-test
+## steps for setup Python3 on Raspberry Pi
 
-preference -> Raspberry PI configuration -> interfaces -> enable camera
-(need to reboot)
+- Raspberry PI 4 came with python3 pre-installed
+- Open terminal and run *pip3 install opencv-python*
+- Install dependent library by running *sudo apt-get install -y libatlas-base-dev libhdf5-dev libhdf5-serial-dev libatlas-base-dev libjasper-dev  libqtgui4  libqt4-test*
+- Press windows key on keyboard to open Raspberry pi menu, click preference -> Raspberry PI configuration -> interfaces -> enable camera (need to reboot)
+- Run *wget https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_frontalface_default.xml*
+- The xml file is the pretrained face detection model for opencv, please move it to */home/pi* folder
+- Download main.py and detector.py in this github, and move them to */home/pi* folder
 
-wget https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_frontalface_default.xml
-(pretrained face for opencv)
+## run the program
+
+- open terminal
+- run command *python3 main.py*
+
+## limitation of version 0.1 of the project
+
+- The camera is only able to detect front of the face, we will add the feature in next versions
