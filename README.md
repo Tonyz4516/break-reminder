@@ -29,6 +29,12 @@ This project aims to solve this issue by running the tracking service on Raspber
 - open terminal
 - run command *python3 main.py*
 
+## hardware shopping list for this project
+- [Raspberry pi](https://www.pishop.us/product/raspberry-pi-4-model-b-2gb/)
+- [camera module](https://www.pishop.us/product/raspberry-pi-camera-module-v2/)
+- [camera mount](https://www.pishop.us/product/adjustable-raspberry-pi-camera-mount-protector/)
+- [electronics kit](https://www.pishop.us/product/electronic-starter-kit-for-raspberry-pi/)
+
 ## limitation of version 0.1 of the project
 
 - The camera is only able to detect front of the face, we will add the feature in next versions
