@@ -5,20 +5,20 @@ import detector
 # initialize LED on gpio pin 17
 led = gpiozero.LED(17)
 
-# saved detector results in the past hour; 1 hour = 600 segments of 6 seconds
+# saved detector results in the past hour; 1 hour == 600 segments of 6 seconds
 timeline = [0 for _ in range(600)]
 
 # for debugging
-statusLight = gpiozero.LED(4)
-statusLightSwitch = 1
+# statusLight = gpiozero.LED(4)
+# statusLightSwitch = 1
 
 while True:
     # indicate if the program is still running
-    statusLightSwitch *= -1
-    if statusLightSwitch > 0:
-        statusLight.on()
-    else:
-        statusLight.off()
+#     statusLightSwitch *= -1
+#     if statusLightSwitch > 0:
+#         statusLight.on()
+#     else:
+#         statusLight.off()
     
     # default for the program is to detect every 6 seconds
     time.sleep(6) # call detector every 6 seconds
