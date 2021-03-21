@@ -37,4 +37,4 @@ This project aims to solve this issue by running the tracking service on Raspber
 
 ## limitation of version 0.1 of the project
 
-- The camera is only able to detect front of the face, we will add the feature in next versions
+- The camera is only able to detect front of the face, we will add support for other detection models soon
