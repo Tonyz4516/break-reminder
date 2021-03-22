@@ -18,11 +18,11 @@ This project aims to solve this issue by running the tracking service on Raspber
 
 - Raspberry PI 4 came with python3 pre-installed
 - Open terminal and run *pip3 install opencv-python imutils*
-- Install dependent library by running *sudo apt-get install -y libatlas-base-dev libhdf5-dev libhdf5-serial-dev libatlas-base-dev libjasper-dev  libqtgui4  libqt4-test*
-- Press windows key on keyboard to open Raspberry pi menu, click preference -> Raspberry PI configuration -> interfaces -> enable camera (need to reboot)
 - Run *wget https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_frontalface_default.xml*
 - Run *wget https://raw.githubusercontent.com/Tonyz4516/break-reminder/main/main.py*
 - Run *wget https://raw.githubusercontent.com/Tonyz4516/break-reminder/main/detector.py*
+- Install dependent library by running *sudo apt-get install -y libatlas-base-dev libhdf5-dev libhdf5-serial-dev libatlas-base-dev libjasper-dev  libqtgui4  libqt4-test*
+- Press windows key on keyboard to open Raspberry pi menu, click preference -> Raspberry PI configuration -> interfaces -> enable camera (need to reboot)
 
 ## run the program
 
