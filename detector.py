@@ -1,12 +1,12 @@
 import cv2
+from imutils.video import VideoStream
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+vs = VideoStream(src=0).start()
 
 def detect_face():
-    cap = cv2.VideoCapture(0)
-    ret, frame = cap.read()
+    frame = vs.read()
     # cv2.imwrite("Desktop/x.jpg", frame)
-    cap.release()
     
     # convert the image to gray scale
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
